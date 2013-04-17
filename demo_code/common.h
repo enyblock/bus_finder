@@ -11,6 +11,12 @@
 #define _ENYBLOCK_2013_04_16_SAP_XIAN_LAB_
 
 
+#include <time.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
 
 typedef struct  _date {
    int day;
@@ -38,6 +44,7 @@ typedef struct _bus_line{
 
 
 
+
 /*define the point data type*/
 typedef struct _bus_point{
 
@@ -48,6 +55,8 @@ typedef struct _bus_point{
 
 } BUS_POINT;
 
+
+BUS_POINT bus_info[1500][50];
 
 
 #endif
