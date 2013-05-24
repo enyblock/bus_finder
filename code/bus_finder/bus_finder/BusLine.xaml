@@ -1,0 +1,102 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="bus_finder.BusLine"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="800"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded" >
+
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <controls:Panorama 
+            x:Name="bus_finder_panorama"
+            SelectionChanged="Panorama_SelectionChanged">
+            <controls:Panorama.Title>
+                <TextBlock Text="bus finder" FontSize="150" Margin="10,35,0,0" />
+            </controls:Panorama.Title>
+
+            <controls:Panorama.Background>
+                <ImageBrush ImageSource="PanoramaBackground.jpg" />
+            </controls:Panorama.Background>
+            
+            <!--Panorama item one-->
+            <controls:PanoramaItem x:Name="ascending_panoramaitem" Header="item1" FontFamily="Arial" FontSize="16">
+                <Grid>
+                    <ListBox Name="ascending_listbox"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Stretch" Margin="8,97,8,0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="info_textblock"
+                                           TextWrapping="Wrap"
+                                           FontSize="35"
+                                   Text="{Binding}" FontFamily="Segoe WP" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock x:Name="ascending_line_shijian_textblock" 
+                               TextWrapping="Wrap" 
+                               VerticalAlignment="Top" 
+                               Height="93"
+                               FontSize="30" 
+                               Margin="8,0" d:IsHidden="True" FontFamily="Segoe WP" />
+                    <TextBlock x:Name="ascending_textblock" 
+                               HorizontalAlignment="Right" 
+                               Margin="0,-64,10,0" 
+                               TextWrapping="Wrap" 
+                               VerticalAlignment="Top" 
+                               Height="48" 
+                               Width="128" FontSize="40" Text="---上行" FontFamily="Segoe WP" />
+                             
+                    
+                </Grid>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <controls:PanoramaItem x:Name="descending_panoramaitem" Header="item2">
+                <Grid>
+                    <ListBox Name="descending_listbox"
+                             VerticalAlignment="Stretch"
+                             HorizontalAlignment="Stretch" Margin="8,97,8,0">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="info_textblock"
+                                           TextWrapping="Wrap"
+                                           FontSize="35"
+                                   Text="{Binding}" FontFamily="Segoe WP" />
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <TextBlock x:Name="descending_line_shijian_textblock" 
+                               TextWrapping="Wrap" 
+                               VerticalAlignment="Top" 
+                               Height="93"
+                               FontSize="30" 
+                               Margin="8,0" d:IsHidden="True"/>
+                    <TextBlock x:Name="descending_textblock" 
+                               HorizontalAlignment="Right" 
+                               Margin="0,-64,10,0" 
+                               TextWrapping="Wrap" 
+                               VerticalAlignment="Top" 
+                               Height="48" 
+                               Width="128" FontSize="40" Text="---下行"/>
+
+
+                </Grid>
+            </controls:PanoramaItem>
+        </controls:Panorama>
+
+        <TextBlock Height="130" HorizontalAlignment="Left" Margin="204,143,0,0" Name="lbOutput" Text="" VerticalAlignment="Top" Width="212" />
+    </Grid>
+
+    <!--Panorama-based applications should not show an ApplicationBar-->
+
+</phone:PhoneApplicationPage>
