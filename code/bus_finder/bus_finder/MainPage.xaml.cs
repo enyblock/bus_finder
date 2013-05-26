@@ -253,6 +253,7 @@ namespace bus_finder
                 point_autocompletebox.Visibility = System.Windows.Visibility.Visible;
                 point_start_autocompletebox.Visibility = System.Windows.Visibility.Collapsed;
                 point_end_autocompletebox.Visibility = System.Windows.Visibility.Collapsed;
+                this.point_autocompletebox_come_animation.Begin();
                 
                 //bus_finder_panorama.Title = string.Format("bus finder 1");
             }
@@ -262,6 +263,8 @@ namespace bus_finder
                 point_autocompletebox.Visibility = System.Windows.Visibility.Collapsed;
                 point_start_autocompletebox.Visibility = System.Windows.Visibility.Visible;
                 point_end_autocompletebox.Visibility = System.Windows.Visibility.Visible;
+                this.point_start_autocompletebox_come_animation.Begin();
+                this.point_end_autocompletebox_come_animation.Begin();
                 //bus_finder_panorama.Title = string.Format("bus finder 2");
             }
             else
@@ -291,7 +294,7 @@ namespace bus_finder
             }
             else
             {
-                this.SearchPerssedAnimation.Begin(); 
+                //this.SearchPerssedAnimation.Begin(); 
             }
 
                        
@@ -432,5 +435,35 @@ namespace bus_finder
                 }
             }
         }
+
+        private void line_autocompletebox_DropDownClosing(object sender, RoutedPropertyChangingEventArgs<bool> e)
+        {
+            this.Focus();
+        }
+
+
+        private void point_start_autocompletebox_DropDownClosing(object sender, RoutedPropertyChangingEventArgs<bool> e)
+        {
+            this.Focus();
+        }
+
+        private void point_autocompletebox_DropDownClosing(object sender, RoutedPropertyChangingEventArgs<bool> e)
+        {
+            this.Focus();
+        }
+
+        private void point_end_autocompletebox_DropDownClosing(object sender, RoutedPropertyChangingEventArgs<bool> e)
+        {
+            this.Focus();
+        }
+
+
+
+
+
+
+
+
+
     }
 }

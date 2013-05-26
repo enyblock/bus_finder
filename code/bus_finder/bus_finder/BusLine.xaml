@@ -12,10 +12,22 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded" >
+    shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
+	<phone:PhoneApplicationPage.Resources>
+		<Storyboard x:Name="busline_page_come_animation">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="LayoutRoot">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-200"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+				<EasingDoubleKeyFrame KeyTime="0:0:3" Value="0"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+	</phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot contains the root grid where all other page content is placed-->
-    <Grid x:Name="LayoutRoot">
+    <Grid x:Name="LayoutRoot" Background="{x:Null}" RenderTransformOrigin="0.5,0.5">
+    	<Grid.RenderTransform>
+    		<CompositeTransform/>
+    	</Grid.RenderTransform>
         <controls:Panorama 
             x:Name="bus_finder_panorama"
             SelectionChanged="Panorama_SelectionChanged">
@@ -94,7 +106,7 @@
             </controls:PanoramaItem>
         </controls:Panorama>
 
-        <TextBlock Height="130" HorizontalAlignment="Left" Margin="204,143,0,0" Name="lbOutput" Text="" VerticalAlignment="Top" Width="212" />
+        <TextBlock Height="130" HorizontalAlignment="Left" Margin="204,143,0,0" Name="lbOutput" Text="" VerticalAlignment="Top" Width="212" Visibility="Collapsed"/>
     </Grid>
 
     <!--Panorama-based applications should not show an ApplicationBar-->

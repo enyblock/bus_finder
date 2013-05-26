@@ -142,3 +142,25 @@ G:\program\windows phone\code\bus_finder-finished_bus_line_bus_point_bus_p2p_dir
 G:\program\windows phone\code\bus_finder-finished_bus_line_bus_point_bus_p2p_direct_line_mainpagesetting - 副本\bus_finder\obj\Debug\bus_finder.dll
 G:\program\windows phone\code\bus_finder-finished_bus_line_bus_point_bus_p2p_direct_line_mainpagesetting - 副本\bus_finder\obj\Debug\bus_finder.pdb
 G:\program\windows phone\code\bus_finder-finished_bus_line_bus_point_bus_p2p_direct_line_mainpagesetting - 副本\bus_finder\obj\Debug\XapCacheFile.xml
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\ApplicationIcon.png
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\Background.png
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\bus_finder.dll
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\bus_finder.pdb
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\AppManifest.xaml
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\bus_finder.xap
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\Microsoft.Phone.Controls.dll
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\Microsoft.Phone.Controls.Toolkit.dll
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\Microsoft.Phone.Controls.xml
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\Microsoft.Phone.Controls.Toolkit.pdb
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\Bin\Debug\Microsoft.Phone.Controls.Toolkit.xml
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\App.g.i.cs
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\BusLine.g.i.cs
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\BusP2P.g.i.cs
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\BusPoint.g.i.cs
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\MainPage.g.i.cs
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\sqlite_test.g.i.cs
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\bus_finder.g.resources
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\bus_finder.dll
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\bus_finder.pdb
+C:\Users\Administrator\bus_finder\code\bus_finder\bus_finder\obj\Debug\XapCacheFile.xml

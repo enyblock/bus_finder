@@ -32,6 +32,24 @@
 				<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+        <Storyboard x:Name="point_autocompletebox_come_animation">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="point_autocompletebox">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0.4"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="point_start_autocompletebox_come_animation">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="point_start_autocompletebox">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0.4"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Name="point_end_autocompletebox_come_animation">
+        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="point_end_autocompletebox">
+        		<EasingDoubleKeyFrame KeyTime="0" Value="0.4"/>
+        		<EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1"/>
+        	</DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 	</phone:PhoneApplicationPage.Resources>
 
     <!--LayoutRoot is the root grid where all page content is 
@@ -49,7 +67,7 @@
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <controls:Panorama 
             x:Name="bus_finder_panorama"
-            SelectionChanged="Panorama_SelectionChanged" d:IsLocked="True">
+            SelectionChanged="Panorama_SelectionChanged">
             <controls:Panorama.Title>
                 <TextBlock Text="bus finder" FontSize="150" Margin="10,35,0,0" />
             </controls:Panorama.Title>
@@ -60,22 +78,22 @@
             
             
             <!--Panorama item one-->
-            <controls:PanoramaItem Header="item1">
+            <controls:PanoramaItem Header="线路查询" d:IsHidden="True">
                 <Grid/>
             </controls:PanoramaItem>
 
             <!--Panorama item two-->
-            <controls:PanoramaItem Header="item2">
+            <controls:PanoramaItem Header="站点查询" d:IsHidden="True">
                 <Grid/>
             </controls:PanoramaItem>
 
             <!--Panorama item three-->
-            <controls:PanoramaItem Header="item3">
+            <controls:PanoramaItem Header="换乘查询">
                 <Grid/>
             </controls:PanoramaItem>
 
             <!--Panorama item four-->
-            <controls:PanoramaItem Header="item4">
+            <controls:PanoramaItem Header="设置" d:IsHidden="True">
                 <Grid/>
             </controls:PanoramaItem>
         </controls:Panorama>
@@ -85,21 +103,23 @@
                                  Margin="7,319,35,401" 
                                  Width="438" 
                                  RenderTransformOrigin="0.5,0.5" 
-                                 IsTextCompletionEnabled="True"
-                                 MaxDropDownHeight ="200" d:IsLocked="True">
+                                 IsTextCompletionEnabled="False"
+                                 MaxDropDownHeight ="200" d:IsHidden="True"
+                                 DropDownClosing="line_autocompletebox_DropDownClosing">
         	<toolkit:AutoCompleteBox.RenderTransform>
         		<CompositeTransform/>
         	</toolkit:AutoCompleteBox.RenderTransform>
         </toolkit:AutoCompleteBox>
 
-        <TextBlock Height="87" HorizontalAlignment="Left" Margin="208,176,0,0" Name="lbOutput" Text="" VerticalAlignment="Top" Width="214" />
+        <TextBlock Height="87" HorizontalAlignment="Left" Margin="208,176,0,0" Name="lbOutput" Text="" VerticalAlignment="Top" Width="214" d:IsHidden="True" Visibility="Collapsed" />
         <toolkit:AutoCompleteBox x:Name="point_autocompletebox" 
         	Height="70" 
         	Margin="7,324,35,406" 
         	Width="438" 
         	RenderTransformOrigin="0.5,0.5" 
-        	IsTextCompletionEnabled="True"
-        	MaxDropDownHeight ="200" d:IsLocked="True">
+        	IsTextCompletionEnabled="False"
+        	MaxDropDownHeight ="200"
+            DropDownClosing="point_autocompletebox_DropDownClosing" d:IsHidden="True">
         	<toolkit:AutoCompleteBox.RenderTransform>
         		<CompositeTransform/>
         	</toolkit:AutoCompleteBox.RenderTransform>
@@ -109,8 +129,9 @@
         	Margin="7,324,35,406" 
         	Width="438" 
         	RenderTransformOrigin="0.5,0.5" 
-        	IsTextCompletionEnabled="True"
-        	MaxDropDownHeight ="200" d:IsLocked="True">
+        	IsTextCompletionEnabled="False"
+        	MaxDropDownHeight ="200"
+            DropDownClosing="point_start_autocompletebox_DropDownClosing" d:IsHidden="True">
         	<toolkit:AutoCompleteBox.RenderTransform>
         		<CompositeTransform/>
         	</toolkit:AutoCompleteBox.RenderTransform>
@@ -120,8 +141,9 @@
         	Margin="7,391,35,339" 
         	Width="438" 
         	RenderTransformOrigin="0.5,0.5" 
-        	IsTextCompletionEnabled="True"
-        	MaxDropDownHeight ="200" d:LayoutOverrides="VerticalAlignment">
+        	IsTextCompletionEnabled="False"
+        	MaxDropDownHeight ="200" d:LayoutOverrides="VerticalAlignment"
+            DropDownClosing="point_end_autocompletebox_DropDownClosing">
         	<toolkit:AutoCompleteBox.RenderTransform>
         		<CompositeTransform/>
         	</toolkit:AutoCompleteBox.RenderTransform>
@@ -130,8 +152,8 @@
     
 
     <phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" Opacity="0.5">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar.feature.search.rest.png" Text="search" Click="app_bar_search_click"/>
+        <shell:ApplicationBar x:Name="app_bar" IsVisible="True" IsMenuEnabled="True" Opacity="0.5">
+            <shell:ApplicationBarIconButton x:Name="search_button" IconUri="/Images/appbar.feature.search.rest.png" Text="search" Click="app_bar_search_click"/>
             <shell:ApplicationBar.MenuItems>
                 <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
                 <shell:ApplicationBarMenuItem Text="MenuItem 2"/>

@@ -34,7 +34,7 @@
             
             <!--Panorama item one-->
             <controls:PanoramaItem x:Name="lines_info_panoramaitem" 
-                                   Header="item1" 
+                                   Header="" 
                                    HeaderTemplate="{StaticResource small_panorama_header}" 
                                    Height="531">
                 <Grid>
@@ -67,7 +67,7 @@
                 <Grid/>
             </controls:PanoramaItem>-->
         </controls:Panorama>
-        <TextBlock Height="117" HorizontalAlignment="Left" Margin="195,150,0,0" Name="lbOutput" Text="" VerticalAlignment="Top" Width="221" />
+        <TextBlock Height="117" HorizontalAlignment="Left" Margin="195,150,0,0" Name="lbOutput" Text="" VerticalAlignment="Top" Width="221" Visibility="Collapsed"/>
     </Grid>
 
     <!--Panorama-based applications should not show an ApplicationBar-->

@@ -35,6 +35,7 @@ namespace bus_finder
             }
              
         }
+        
 
         private void set_line_shijian()
         {
@@ -56,6 +57,7 @@ namespace bus_finder
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
+            this.busline_page_come_animation.Begin();
 
             set_panoramaitem_header();
 
